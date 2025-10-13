@@ -1,0 +1,164 @@
+(.venv) mjramani@SEA-YJVNMX5JASN:~/projects/agents_hub/AgentCore/amazon-bedrock-agentcore-samples$ python3 extract_memory_fixed.py
+
+================================================================================
+EXTRACTING AGENTCORE LONG-TERM MEMORY CONTENTS (FIXED) for memory_id {'TravelAgent_STM_20251012114311-E9nNWYBpoW'}
+Memory ID: TravelAgent_STM_20251012114311-E9nNWYBpoW
+Region: us-west-2
+================================================================================
+INFO:botocore.credentials:Found credentials in shared credentials file: ~/.aws/credentials
+INFO:bedrock_agentcore.memory.client:Initialized MemoryClient for control plane: us-west-2, data plane: us-west-2
+INFO:botocore.credentials:Found credentials in shared credentials file: ~/.aws/credentials
+
+📋 MEMORY CONFIGURATION:
+--------------------------------------------------
+Name: TravelAgent_STM_20251012114311
+Status: ACTIVE
+Description: Travel Agent STM
+
+Strategies: 3 configured
+  1. memory_preference_bgh1l (USER_PREFERENCE) - Status: ACTIVE
+     Namespaces: ['/strategies/{memoryStrategyId}/actors/{actorId}']
+  2. memory_semantic_bgh1l (SEMANTIC) - Status: ACTIVE
+     Namespaces: ['/strategies/{memoryStrategyId}/actors/{actorId}']
+  3. summary_builtin_bgh1l (SUMMARIZATION) - Status: ACTIVE
+     Namespaces: ['/strategies/{memoryStrategyId}/actors/{actorId}/sessions/{sessionId}']
+
+👥 DISCOVERING ACTORS:
+--------------------------------------------------
+INFO:bedrock_agentcore.memory.session:👥 Listing all actors for memory TravelAgent_STM_20251012114311-E9nNWYBpoW...
+INFO:bedrock_agentcore.memory.session:  ✅ Found 2 actors.
+Found 2 actors:
+  - Actor ID: travel-user-20251012115414
+  - Actor ID: travel-user-20251012121822
+
+🔧 RESOLVING NAMESPACE TEMPLATES:
+--------------------------------------------------
+Template namespaces: 2
+  - /strategies/{memoryStrategyId}/actors/{actorId}
+  - /strategies/{memoryStrategyId}/actors/{actorId}/sessions/{sessionId}
+
+Resolved to 7 concrete namespaces:
+  - /strategies
+  - /strategies/memory_preference_bgh1l-UT98mFGiMi/actors/travel-user-20251012115414
+  - /strategies/memory_preference_bgh1l-UT98mFGiMi/actors/travel-user-20251012121822
+  - /strategies/memory_semantic_bgh1l-fx8JFbAyji/actors/travel-user-20251012115414
+  - /strategies/memory_semantic_bgh1l-fx8JFbAyji/actors/travel-user-20251012121822
+  - /strategies/summary_builtin_bgh1l-Z0BuDjBDAx/actors/travel-user-20251012115414
+  - /strategies/summary_builtin_bgh1l-Z0BuDjBDAx/actors/travel-user-20251012121822
+
+📦 EXTRACTING MEMORY RECORDS:
+--------------------------------------------------
+
+🔍 Namespace: /strategies
+INFO:bedrock_agentcore.memory.session:  -> Listing all long-term records in namespace '/strategies'...
+INFO:bedrock_agentcore.memory.session:     ✅ Found a total of 6 long-term records.
+   ✅ Found 6 records:
+     1. ID: mem-7edba039-3b3a-469e-b9be-ea857f644ae4
+        Strategy: memory_preference_bgh1l-UT98mFGiMi
+        Created: 2025-10-12 12:19:27.677000-07:00
+        Content: {"context":"User has consistently mentioned specific travel dates and destination for international trips","preference":"Interested in long international trips (approximately one month duration)","categories":["travel","trip planning"]}
+
+     2. ID: mem-a4972798-f1cd-4403-bc22-c3aa3cb09c32
+        Strategy: memory_semantic_bgh1l-fx8JFbAyji
+        Created: 2025-10-12 12:20:18.575000-07:00
+        Content: The user is planning a trip from Hawaii to Mumbai from July 1 to August 2, which is a month-long travel period. They are seeking flight options, with a specific interest in British Airways routes and exploring international flight connections.
+
+     3. ID: mem-e600793a-a2fb-4d2d-ab5b-5707676f8eff
+        Strategy: memory_preference_bgh1l-UT98mFGiMi
+        Created: 2025-10-12 12:20:18.575000-07:00
+        Content: {"context":"User specifically requested direct flight options with British Airways from Hawaii to Mumbai","preference":"Wants to fly British Airways with a direct flight from Hawaii to Mumbai","categories":["travel","transportation","airlines"]}
+
+     4. ID: mem-63800fe00bf34b39537c15a6e34230ab42c1_1
+        Strategy: summary_builtin_bgh1l-Z0BuDjBDAx
+        Created: 2025-10-12 12:20:18.575000-07:00
+        Content:     <topic name="Initial Travel Request - LA to Madrid">
+        The user initially requested to book a trip from Los Angeles to Madrid from July 1 to August 2. The assistant offered to help and started gathering necessary information for both flights and hotels.
+    </topic>
+    <topic name="Flight Information - LA to Madrid">
+        The assistant provided flight options including direct flights on Iberia and American Airlines (11-12 hours) and one-stop options through cities like New York, Mi...
+
+     5. ID: mem-58a8f26d-4390-40d0-89ea-b9730fbe478a
+        Strategy: memory_preference_bgh1l-UT98mFGiMi
+        Created: 2025-10-12 12:19:27.677000-07:00
+        Content: {"context":"User's travel dates are consistently July 1 to August 2, suggesting a specific travel period preference","preference":"Prefers summer travel period (July to August)","categories":["travel","seasonal travel"]}
+
+     6. ID: mem-f8c588cb-d64a-49da-826d-6c8a758e2f7f
+        Strategy: memory_preference_bgh1l-UT98mFGiMi
+        Created: 2025-10-12 12:20:18.575000-07:00
+        Content: {"context":"User requested flight and hotel options for international destinations (initially Los Angeles to Madrid, then Hawaii to Mumbai) and wants to focus only on flight arrangements with specific airline and date requirements","preference":"Enjoys planning comprehensive travel arrangements including flights and accommodations with preference for direct international flights between Hawaii and Mumbai","categories":["travel","trip planning","international travel","transportation","flight plan...
+
+
+🔍 Namespace: /strategies/memory_preference_bgh1l-UT98mFGiMi/actors/travel-user-20251012115414
+INFO:bedrock_agentcore.memory.session:  -> Listing all long-term records in namespace '/strategies/memory_preference_bgh1l-UT98mFGiMi/actors/travel-user-20251012115414'...
+INFO:bedrock_agentcore.memory.session:     ✅ Found a total of 0 long-term records.
+   No records found
+
+🔍 Namespace: /strategies/memory_preference_bgh1l-UT98mFGiMi/actors/travel-user-20251012121822
+INFO:bedrock_agentcore.memory.session:  -> Listing all long-term records in namespace '/strategies/memory_preference_bgh1l-UT98mFGiMi/actors/travel-user-20251012121822'...
+INFO:bedrock_agentcore.memory.session:     ✅ Found a total of 4 long-term records.
+   ✅ Found 4 records:
+     1. ID: mem-7edba039-3b3a-469e-b9be-ea857f644ae4
+        Strategy: memory_preference_bgh1l-UT98mFGiMi
+        Created: 2025-10-12 12:19:27.677000-07:00
+        Content: {"context":"User has consistently mentioned specific travel dates and destination for international trips","preference":"Interested in long international trips (approximately one month duration)","categories":["travel","trip planning"]}
+
+     2. ID: mem-e600793a-a2fb-4d2d-ab5b-5707676f8eff
+        Strategy: memory_preference_bgh1l-UT98mFGiMi
+        Created: 2025-10-12 12:20:18.575000-07:00
+        Content: {"context":"User specifically requested direct flight options with British Airways from Hawaii to Mumbai","preference":"Wants to fly British Airways with a direct flight from Hawaii to Mumbai","categories":["travel","transportation","airlines"]}
+
+     3. ID: mem-58a8f26d-4390-40d0-89ea-b9730fbe478a
+        Strategy: memory_preference_bgh1l-UT98mFGiMi
+        Created: 2025-10-12 12:19:27.677000-07:00
+        Content: {"context":"User's travel dates are consistently July 1 to August 2, suggesting a specific travel period preference","preference":"Prefers summer travel period (July to August)","categories":["travel","seasonal travel"]}
+
+     4. ID: mem-f8c588cb-d64a-49da-826d-6c8a758e2f7f
+        Strategy: memory_preference_bgh1l-UT98mFGiMi
+        Created: 2025-10-12 12:20:18.575000-07:00
+        Content: {"context":"User requested flight and hotel options for international destinations (initially Los Angeles to Madrid, then Hawaii to Mumbai) and wants to focus only on flight arrangements with specific airline and date requirements","preference":"Enjoys planning comprehensive travel arrangements including flights and accommodations with preference for direct international flights between Hawaii and Mumbai","categories":["travel","trip planning","international travel","transportation","flight plan...
+
+
+🔍 Namespace: /strategies/memory_semantic_bgh1l-fx8JFbAyji/actors/travel-user-20251012115414
+INFO:bedrock_agentcore.memory.session:  -> Listing all long-term records in namespace '/strategies/memory_semantic_bgh1l-fx8JFbAyji/actors/travel-user-20251012115414'...
+INFO:bedrock_agentcore.memory.session:     ✅ Found a total of 0 long-term records.
+   No records found
+
+🔍 Namespace: /strategies/memory_semantic_bgh1l-fx8JFbAyji/actors/travel-user-20251012121822
+INFO:bedrock_agentcore.memory.session:  -> Listing all long-term records in namespace '/strategies/memory_semantic_bgh1l-fx8JFbAyji/actors/travel-user-20251012121822'...
+INFO:bedrock_agentcore.memory.session:     ✅ Found a total of 1 long-term records.
+   ✅ Found 1 records:
+     1. ID: mem-a4972798-f1cd-4403-bc22-c3aa3cb09c32
+        Strategy: memory_semantic_bgh1l-fx8JFbAyji
+        Created: 2025-10-12 12:20:18.575000-07:00
+        Content: The user is planning a trip from Hawaii to Mumbai from July 1 to August 2, which is a month-long travel period. They are seeking flight options, with a specific interest in British Airways routes and exploring international flight connections.
+
+
+🔍 Namespace: /strategies/summary_builtin_bgh1l-Z0BuDjBDAx/actors/travel-user-20251012115414
+INFO:bedrock_agentcore.memory.session:  -> Listing all long-term records in namespace '/strategies/summary_builtin_bgh1l-Z0BuDjBDAx/actors/travel-user-20251012115414'...
+INFO:bedrock_agentcore.memory.session:     ✅ Found a total of 0 long-term records.
+   No records found
+
+🔍 Namespace: /strategies/summary_builtin_bgh1l-Z0BuDjBDAx/actors/travel-user-20251012121822
+INFO:bedrock_agentcore.memory.session:  -> Listing all long-term records in namespace '/strategies/summary_builtin_bgh1l-Z0BuDjBDAx/actors/travel-user-20251012121822'...
+INFO:bedrock_agentcore.memory.session:     ✅ Found a total of 1 long-term records.
+   ✅ Found 1 records:
+     1. ID: mem-63800fe00bf34b39537c15a6e34230ab42c1_1
+        Strategy: summary_builtin_bgh1l-Z0BuDjBDAx
+        Created: 2025-10-12 12:20:18.575000-07:00
+        Content:     <topic name="Initial Travel Request - LA to Madrid">
+        The user initially requested to book a trip from Los Angeles to Madrid from July 1 to August 2. The assistant offered to help and started gathering necessary information for both flights and hotels.
+    </topic>
+    <topic name="Flight Information - LA to Madrid">
+        The assistant provided flight options including direct flights on Iberia and American Airlines (11-12 hours) and one-stop options through cities like New York, Mi...
+
+
+================================================================================
+EXTRACTION SUMMARY
+================================================================================
+Total Records Found: 12
+Concrete Namespaces: 7
+Template Namespaces: 2
+Strategies Configured: 3
+Actors Found: 2
+
+✅ Successfully extracted 12 memory records!
