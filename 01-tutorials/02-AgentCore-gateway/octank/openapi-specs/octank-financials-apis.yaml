@@ -1,0 +1,64 @@
+openapi: 3.0.0
+info:
+  title: Message API
+  version: 1.0.0
+paths:
+  /message:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MessagePayload'
+      responses:
+        '200':
+          description: Success
+components:
+  schemas:
+    MessagePayload:
+      type: object
+      properties:
+        session:
+          type: object
+          properties:
+            new:
+              type: boolean
+              example: false
+        message:
+          type: object
+          properties:
+            text:
+              type: string
+              example: "what is my account balance"
+            attachments:
+              type: array
+              items:
+                type: object
+                properties:
+                  fileId:
+                    type: string
+                    example: "6511643xxxxxxx19b79"
+                  fileType:
+                    type: string
+                    example: "txt"
+                  fileName:
+                    type: string
+                    example: "IVR Doc"
+        from:
+          type: object
+          properties:
+            id:
+              type: string
+              example: "xxxx34xxxxqwe"
+            userInfo:
+              type: object
+              properties:
+                firstName:
+                  type: string
+                  example: ""
+                lastName:
+                  type: string
+                  example: ""
+                email:
+                  type: string
+                  example: ""
